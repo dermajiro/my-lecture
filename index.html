@@ -5,107 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>皮膚科専門医が教える 皮膚トラブル解決講座</title>
 
-  <!-- OG（SNS共有）用の簡易タグ。画像はあとで差し替えてください -->
+  <!-- SNS共有用（絶対URLに変更） -->
   <meta property="og:title" content="皮膚科専門医が教える 皮膚トラブル解決講座">
   <meta property="og:description" content="かゆみ・にきび・湿疹・じんましん…皮膚の悩みを専門医と一緒に解決。初心者OK、実践に強い1日集中講座。">
-  <meta property="og:image" content="images/og-derm.jpg">
+  <meta property="og:image" content="https://dermajiro.github.io/my-lecture/images/og-derm.jpg">
 
   <style>
-    /* できるだけシンプルに・1ファイル完結のCSS */
     :root{
-      --brand:#0B63CE;      /* メインカラー */
-      --brand-dark:#084a9a; /* 濃いめ */
-      --ink:#1a1a1a;        /* 文字色 */
-      --bg:#ffffff;         /* 背景色 */
-      --muted:#6b7280;      /* 補助文字 */
-      --card:#f5f7fb;       /* カード背景 */
-      --radius:14px;
-      --shadow:0 10px 20px rgba(0,0,0,.06);
+      --brand:#0B63CE; --brand-dark:#084a9a; --ink:#1a1a1a; --bg:#ffffff;
+      --muted:#6b7280; --card:#f5f7fb; --radius:14px; --shadow:0 10px 20px rgba(0,0,0,.06);
     }
     *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic UI", "YuGothic", "Meiryo", sans-serif;
-      color:var(--ink);
-      line-height:1.7;
-      background:var(--bg);
-    }
+    body{margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic UI","YuGothic","Meiryo",sans-serif; color:var(--ink); line-height:1.7; background:var(--bg)}
     a{color:var(--brand); text-decoration:none}
     .container{max-width:1100px; margin:0 auto; padding:0 20px}
-    .btn{
-      display:inline-block; padding:12px 20px; border-radius:999px;
-      background:var(--brand); color:#fff; font-weight:700;
-      transition:transform .04s ease, background .2s ease;
-    }
-    .btn:hover{ background:var(--brand-dark); transform:translateY(-1px) }
-    .btn-outline{
-      background:#fff; color:var(--brand); border:2px solid var(--brand);
-    }
-    header.hero{
-      position:relative; color:#fff; overflow:hidden;
-      background:#0b3d91;
-    }
-    .hero-inner{
-      display:grid; gap:28px; align-items:center;
-      grid-template-columns:1fr; padding:56px 0;
-    }
-    .hero-text h1{
-      margin:0 0 10px; font-size:clamp(28px, 4.5vw, 44px); line-height:1.2;
-      letter-spacing:.02em;
-    }
-    .hero-text p{ margin:0 0 18px; font-size:clamp(15px, 2.6vw, 18px) }
+    .btn{display:inline-block; padding:12px 20px; border-radius:999px; background:var(--brand); color:#fff; font-weight:700; transition:transform .04s ease, background .2s ease}
+    .btn:hover{background:var(--brand-dark); transform:translateY(-1px)}
+    .btn-outline{background:#fff; color:var(--brand); border:2px solid var(--brand)}
+    header.hero{position:relative; color:#fff; overflow:hidden; background:#0b3d91}
+    .hero-inner{display:grid; gap:28px; align-items:center; grid-template-columns:1fr; padding:56px 0}
+    .hero-text h1{margin:0 0 10px; font-size:clamp(28px,4.5vw,44px); line-height:1.2; letter-spacing:.02em}
+    .hero-text p{margin:0 0 18px; font-size:clamp(15px,2.6vw,18px)}
     .hero-badges{display:flex; gap:10px; flex-wrap:wrap}
-    .badge{
-      background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.35);
-      padding:6px 10px; border-radius:999px; font-size:13px;
-      backdrop-filter: blur(4px);
-    }
-    .hero-visual{
-      width:100%; aspect-ratio:16/9; border-radius:var(--radius);
-      background:url('images/derm-hero.jpg') center/cover no-repeat;
-      box-shadow:var(--shadow);
-    }
-    @media(min-width:900px){
-      .hero-inner{ grid-template-columns:1.2fr .8fr; padding:80px 0 }
-    }
+    .badge{background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.35); padding:6px 10px; border-radius:999px; font-size:13px; backdrop-filter:blur(4px)}
+    .hero-visual{width:100%; aspect-ratio:16/9; border-radius:var(--radius); background:url('images/derm-hero.jpg') center/cover no-repeat; box-shadow:var(--shadow)}
+    @media(min-width:900px){ .hero-inner{ grid-template-columns:1.2fr .8fr; padding:80px 0 } }
+    section{padding:48px 0}
+    h2{font-size:clamp(22px,3.4vw,28px); margin:0 0 18px}
+    .lead{color:var(--muted); margin-top:-6px}
+    .grid-3{display:grid; gap:18px; grid-template-columns:1fr}
+    @media(min-width:800px){ .grid-3{grid-template-columns:repeat(3,1fr)} }
+    .card{background:var(--card); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
+    .card h3{margin:8px 0 6px; font-size:18px}
+    .card p{margin:0; color:#374151; font-size:15px}
+    .two-col{display:grid; gap:24px; grid-template-columns:1fr}
+    @media(min-width:900px){ .two-col{grid-template-columns:1.1fr .9fr} }
+    .rounded{border-radius:var(--radius); box-shadow:var(--shadow)}
+    .media{display:flex; gap:14px; align-items:center}
+    .media img{width:56px; height:56px; object-fit:cover; border-radius:50%}
+    .media .meta{font-size:14px; color:var(--muted)}
+    .faq details{background:var(--card); padding:14px 16px; border-radius:12px; box-shadow:var(--shadow)}
+    .faq details+details{margin-top:10px}
+    .faq summary{cursor:pointer; font-weight:700}
+    .faq p{margin:10px 0 0}
+    footer{background:#0f172a; color:#cbd5e1; padding:26px 0; font-size:14px}
+    .footer-grid{display:grid; gap:12px; grid-template-columns:1fr}
+    @media(min-width:800px){ .footer-grid{grid-template-columns:1fr auto} }
+    .small{font-size:12px; color:#94a3b8}
+    .cta-strip{position:sticky; bottom:0; background:#ffffffd9; backdrop-filter:blur(6px); border-top:1px solid #e5e7eb; padding:10px 0; z-index:99}
 
-    section{ padding:48px 0 }
-    h2{ font-size:clamp(22px, 3.4vw, 28px); margin:0 0 18px }
-    .lead{ color:var(--muted); margin-top:-6px }
-
-    .grid-3{ display:grid; gap:18px; grid-template-columns:1fr; }
-    @media(min-width:800px){ .grid-3{ grid-template-columns:repeat(3,1fr) } }
-    .card{
-      background:var(--card); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow);
-    }
-    .card h3{ margin:8px 0 6px; font-size:18px }
-    .card p{ margin:0; color:#374151; font-size:15px }
-
-    .two-col{ display:grid; gap:24px; grid-template-columns:1fr }
-    @media(min-width:900px){ .two-col{ grid-template-columns:1.1fr .9fr } }
-    .rounded{ border-radius:var(--radius); box-shadow:var(--shadow) }
-
-    .media{ display:flex; gap:14px; align-items:center }
-    .media img{ width:56px; height:56px; object-fit:cover; border-radius:50%; }
-    .media .meta{ font-size:14px; color:var(--muted) }
-
-    .faq details{
-      background:var(--card); padding:14px 16px; border-radius:12px; box-shadow:var(--shadow);
-    }
-    .faq details + details{ margin-top:10px }
-    .faq summary{ cursor:pointer; font-weight:700 }
-    .faq p{ margin:10px 0 0 }
-
-    footer{
-      background:#0f172a; color:#cbd5e1; padding:26px 0; font-size:14px;
-    }
-    .footer-grid{ display:grid; gap:12px; grid-template-columns:1fr }
-    @media(min-width:800px){ .footer-grid{ grid-template-columns:1fr auto } }
-    .small{ font-size:12px; color:#94a3b8 }
-    .cta-strip{
-      position:sticky; bottom:0; background:#ffffffd9; backdrop-filter: blur(6px);
-      border-top:1px solid #e5e7eb; padding:10px 0; z-index:99;
-    }
+    /* 追加：画像4枚の確認用ギャラリー（公開後は消してOK） */
+    .gallery{display:grid; gap:14px; grid-template-columns:1fr; margin-top:8px}
+    @media(min-width:800px){ .gallery{grid-template-columns:repeat(4,1fr)} }
+    .gallery figure{margin:0; background:#fff; border:1px solid #e5e7eb; border-radius:12px; overflow:hidden}
+    .gallery img{width:100%; height:180px; object-fit:cover; display:block}
+    .gallery figcaption{padding:8px 10px; font-size:12px; color:#334155}
   </style>
 </head>
 <body>
@@ -122,17 +76,40 @@
         <h1>皮膚科専門医が教える<br/>皮膚トラブル解決講座</h1>
         <p>かゆみ・にきび・湿疹・じんましん・アトピーなど、よくある皮膚の悩みを“正しく・安全に・すぐ実践”できるように学ぶ1日集中講座です。</p>
         <div style="display:flex; gap:12px; flex-wrap:wrap">
-          <!-- 申込フォームのURLに差し替えてください（Googleフォーム等） -->
           <a class="btn" href="https://example.com/form" target="_blank" rel="noopener">今すぐ申し込む</a>
           <a class="btn btn-outline" href="#curriculum">カリキュラムを見る</a>
         </div>
       </div>
-      <!-- フリー素材の差し替え推奨：images/derm-hero.jpg を置く -->
+      <!-- ヒーロー背景画像：images/derm-hero.jpg -->
       <div class="hero-visual" aria-label="皮膚科のイメージ写真（差し替え推奨）"></div>
     </div>
   </header>
 
   <main class="container">
+
+    <!-- 画像4枚の表示テスト（あとで削除OK） -->
+    <section id="assets-preview">
+      <h2>画像が正しく読めているかの確認</h2>
+      <div class="gallery">
+        <figure>
+          <img src="images/derm-hero.jpg" alt="ヒーロー画像（derm-hero.jpg）">
+          <figcaption>ヒーロー画像（derm-hero.jpg）</figcaption>
+        </figure>
+        <figure>
+          <img src="images/doctor.jpg" alt="講師イメージ（doctor.jpg）">
+          <figcaption>講師イメージ（doctor.jpg）</figcaption>
+        </figure>
+        <figure>
+          <img src="images/derm-detail.jpg" alt="講座イメージ（derm-detail.jpg）">
+          <figcaption>講座イメージ（derm-detail.jpg）</figcaption>
+        </figure>
+        <figure>
+          <img src="images/og-derm.jpg" alt="OG画像（SNS用, og-derm.jpg）">
+          <figcaption>OG画像（SNS用, og-derm.jpg）</figcaption>
+        </figure>
+      </div>
+      <p class="small">※ 表示できれば配置OK。公開後はこのセクションを削除しても構いません。</p>
+    </section>
 
     <!-- この講座で解決できること -->
     <section id="benefits">
@@ -172,7 +149,6 @@
         </ul>
       </div>
       <div>
-        <!-- 講義の様子などの写真を入れると安心感UP -->
         <img class="rounded" src="images/derm-detail.jpg" alt="講座イメージ（差し替え推奨）" />
       </div>
     </section>
@@ -259,7 +235,6 @@
       </div>
     </div>
     <script>
-      // コピーして使いやすいよう西暦を自動挿入
       document.getElementById('y').textContent = new Date().getFullYear();
     </script>
   </footer>
