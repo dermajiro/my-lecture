@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>皮膚科専門医が教える 皮膚トラブル解決講座</title>
+
+  <!-- OG（SNS共有）用の簡易タグ。画像はあとで差し替えてください -->
+  <meta property="og:title" content="皮膚科専門医が教える 皮膚トラブル解決講座">
+  <meta property="og:description" content="かゆみ・にきび・湿疹・じんましん…皮膚の悩みを専門医と一緒に解決。初心者OK、実践に強い1日集中講座。">
+  <meta property="og:image" content="images/og-derm.jpg">
+
+  <style>
+    /* できるだけシンプルに・1ファイル完結のCSS */
+    :root{
+      --brand:#0B63CE;      /* メインカラー */
+      --brand-dark:#084a9a; /* 濃いめ */
+      --ink:#1a1a1a;        /* 文字色 */
+      --bg:#ffffff;         /* 背景色 */
+      --muted:#6b7280;      /* 補助文字 */
+      --card:#f5f7fb;       /* カード背景 */
+      --radius:14px;
+      --shadow:0 10px 20px rgba(0,0,0,.06);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic UI", "YuGothic", "Meiryo", sans-serif;
+      color:var(--ink);
+      line-height:1.7;
+      background:var(--bg);
+    }
+    a{color:var(--brand); text-decoration:none}
+    .container{max-width:1100px; margin:0 auto; padding:0 20px}
+    .btn{
+      display:inline-block; padding:12px 20px; border-radius:999px;
+      background:var(--brand); color:#fff; font-weight:700;
+      transition:transform .04s ease, background .2s ease;
+    }
+    .btn:hover{ background:var(--brand-dark); transform:translateY(-1px) }
+    .btn-outline{
+      background:#fff; color:var(--brand); border:2px solid var(--brand);
+    }
+    header.hero{
+      position:relative; color:#fff; overflow:hidden;
+      background:#0b3d91;
+    }
+    .hero-inner{
+      display:grid; gap:28px; align-items:center;
+      grid-template-columns:1fr; padding:56px 0;
+    }
+    .hero-text h1{
+      margin:0 0 10px; font-size:clamp(28px, 4.5vw, 44px); line-height:1.2;
+      letter-spacing:.02em;
+    }
+    .hero-text p{ margin:0 0 18px; font-size:clamp(15px, 2.6vw, 18px) }
+    .hero-badges{display:flex; gap:10px; flex-wrap:wrap}
+    .badge{
+      background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.35);
+      padding:6px 10px; border-radius:999px; font-size:13px;
+      backdrop-filter: blur(4px);
+    }
+    .hero-visual{
+      width:100%; aspect-ratio:16/9; border-radius:var(--radius);
+      background:url('images/derm-hero.jpg') center/cover no-repeat;
+      box-shadow:var(--shadow);
+    }
+    @media(min-width:900px){
+      .hero-inner{ grid-template-columns:1.2fr .8fr; padding:80px 0 }
+    }
+
+    section{ padding:48px 0 }
+    h2{ font-size:clamp(22px, 3.4vw, 28px); margin:0 0 18px }
+    .lead{ color:var(--muted); margin-top:-6px }
+
+    .grid-3{ display:grid; gap:18px; grid-template-columns:1fr; }
+    @media(min-width:800px){ .grid-3{ grid-template-columns:repeat(3,1fr) } }
+    .card{
+      background:var(--card); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow);
+    }
+    .card h3{ margin:8px 0 6px; font-size:18px }
+    .card p{ margin:0; color:#374151; font-size:15px }
+
+    .two-col{ display:grid; gap:24px; grid-template-columns:1fr }
+    @media(min-width:900px){ .two-col{ grid-template-columns:1.1fr .9fr } }
+    .rounded{ border-radius:var(--radius); box-shadow:var(--shadow) }
+
+    .media{ display:flex; gap:14px; align-items:center }
+    .media img{ width:56px; height:56px; object-fit:cover; border-radius:50%; }
+    .media .meta{ font-size:14px; color:var(--muted) }
+
+    .faq details{
+      background:var(--card); padding:14px 16px; border-radius:12px; box-shadow:var(--shadow);
+    }
+    .faq details + details{ margin-top:10px }
+    .faq summary{ cursor:pointer; font-weight:700 }
+    .faq p{ margin:10px 0 0 }
+
+    footer{
+      background:#0f172a; color:#cbd5e1; padding:26px 0; font-size:14px;
+    }
+    .footer-grid{ display:grid; gap:12px; grid-template-columns:1fr }
+    @media(min-width:800px){ .footer-grid{ grid-template-columns:1fr auto } }
+    .small{ font-size:12px; color:#94a3b8 }
+    .cta-strip{
+      position:sticky; bottom:0; background:#ffffffd9; backdrop-filter: blur(6px);
+      border-top:1px solid #e5e7eb; padding:10px 0; z-index:99;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ヒーロー（最上部） -->
+  <header class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <div class="hero-badges">
+          <span class="badge">初心者OK</span>
+          <span class="badge">専門医が直接レクチャー</span>
+          <span class="badge">1ページで完結</span>
+        </div>
+        <h1>皮膚科専門医が教える<br/>皮膚トラブル解決講座</h1>
+        <p>かゆみ・にきび・湿疹・じんましん・アトピーなど、よくある皮膚の悩みを“正しく・安全に・すぐ実践”できるように学ぶ1日集中講座です。</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap">
+          <!-- 申込フォームのURLに差し替えてください（Googleフォーム等） -->
+          <a class="btn" href="https://example.com/form" target="_blank" rel="noopener">今すぐ申し込む</a>
+          <a class="btn btn-outline" href="#curriculum">カリキュラムを見る</a>
+        </div>
+      </div>
+      <!-- フリー素材の差し替え推奨：images/derm-hero.jpg を置く -->
+      <div class="hero-visual" aria-label="皮膚科のイメージ写真（差し替え推奨）"></div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- この講座で解決できること -->
+    <section id="benefits">
+      <h2>こんなお悩み、ありませんか？</h2>
+      <p class="lead">皮膚トラブルは自己流で悪化しがち。専門医の視点で「やるべきこと／やってはいけないこと」をスッキリ整理します。</p>
+      <div class="grid-3">
+        <div class="card">
+          <h3>にきび・マスク荒れ</h3>
+          <p>市販薬と受診の目安、生活習慣のコツ、悪化因子の見分け方。</p>
+        </div>
+        <div class="card">
+          <h3>かゆみ・湿疹</h3>
+          <p>保湿・外用・内服の基本と、塗り方・やめ方のタイミング。</p>
+        </div>
+        <div class="card">
+          <h3>じんましん・敏感肌</h3>
+          <p>原因推定の進め方、受診時に役立つ記録の付け方、安全な対処。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 講師紹介 -->
+    <section id="instructor" class="two-col">
+      <div>
+        <h2>講師について</h2>
+        <div class="media">
+          <img src="images/doctor.jpg" alt="講師プロフィール（差し替え可）" />
+          <div>
+            <strong>皮膚科専門医 ○○ ○○</strong>
+            <div class="meta">大学病院・皮膚外科/アレルギー領域での診療・研究に従事</div>
+          </div>
+        </div>
+        <p>臨床経験に基づき、受講後すぐ役立つ“再現性の高いケア”を重視。市販薬・処方薬・スキンケアの境界もわかりやすく解説します。</p>
+        <ul>
+          <li>専門：皮膚外科、腫瘍、アレルギー、炎症性皮膚疾患</li>
+          <li>学会発表・論文多数、指導医資格あり</li>
+        </ul>
+      </div>
+      <div>
+        <!-- 講義の様子などの写真を入れると安心感UP -->
+        <img class="rounded" src="images/derm-detail.jpg" alt="講座イメージ（差し替え推奨）" />
+      </div>
+    </section>
+
+    <!-- カリキュラム -->
+    <section id="curriculum">
+      <h2>1日集中カリキュラム</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>基礎：皮膚の仕組み</h3>
+          <p>皮膚の構造／バリア機能／炎症の基本。用語をやさしく整理。</p>
+        </div>
+        <div class="card">
+          <h3>実践：症状別の対処</h3>
+          <p>にきび、湿疹、じんましん、乾燥、かゆみ…ケースごとに具体策。</p>
+        </div>
+        <div class="card">
+          <h3>応用：再発予防と記録</h3>
+          <p>再発しない生活設計、スキンケア計画、受診時に役立つ記録術。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 開催概要・料金 -->
+    <section id="outline" class="two-col">
+      <div>
+        <h2>開催概要</h2>
+        <ul>
+          <li><strong>日程：</strong>2025年10月○日（所要 約3.5時間）</li>
+          <li><strong>形式：</strong>オンライン（Zoom）</li>
+          <li><strong>対象：</strong>一般の方向け／医療従事者の参加も歓迎</li>
+          <li><strong>特典：</strong>復習用PDF・チェックリスト付き</li>
+        </ul>
+      </div>
+      <div>
+        <h2>受講料</h2>
+        <div class="card">
+          <p style="margin:6px 0">通常価格 <s>¥9,800</s></p>
+          <p style="margin:6px 0; font-size:22px; font-weight:800">早割 ¥7,800</p>
+          <a class="btn" href="https://example.com/form" target="_blank" rel="noopener">申し込む</a>
+          <p class="small" style="margin-top:10px">※価格はサンプル。実額に書き換えてください。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- よくある質問 -->
+    <section class="faq">
+      <h2>よくある質問</h2>
+      <details>
+        <summary>初心者ですがついていけますか？</summary>
+        <p>やさしい言葉で進めます。専門用語はその都度かみ砕いて解説します。</p>
+      </details>
+      <details>
+        <summary>必要な準備はありますか？</summary>
+        <p>Zoomの動作環境、メモできるもの（紙 or PC）。市販薬の具体名は中立的に説明します。</p>
+      </details>
+      <details>
+        <summary>録画はありますか？</summary>
+        <p>開催回により異なります。申込フォームに最新情報を明記してください。</p>
+      </details>
+    </section>
+
+  </main>
+
+  <!-- 画面下の固定申込ボタン（スマホで便利） -->
+  <div class="cta-strip">
+    <div class="container" style="display:flex; gap:10px; justify-content:space-between; align-items:center; flex-wrap:wrap">
+      <div style="font-weight:600">受講申込はコチラから</div>
+      <div style="display:flex; gap:10px">
+        <a class="btn" href="https://example.com/form" target="_blank" rel="noopener">申し込む</a>
+        <a class="btn btn-outline" href="#outline">開催概要</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div>&copy; <span id="y"></span> 皮膚トラブル解決講座</div>
+        <div class="small">医療情報の正確性に努めますが、個別の診断・治療は医療機関でご相談ください。</div>
+      </div>
+      <div class="small">
+        画像クレジット例：Pexels / Unsplash / Pixabay（各ライセンスに従って表記）
+      </div>
+    </div>
+    <script>
+      // コピーして使いやすいよう西暦を自動挿入
+      document.getElementById('y').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+
+</body>
+</html>
